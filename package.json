@@ -1,0 +1,31 @@
+{
+  "name": "plots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "moment": "^2.24.0",
+    "serialport": "^8.0.7"
+  },
+  "build": {
+    "appId": "com.brightperspectives.plots",
+    "mac": {
+      "category": "public.app-category.utilities"
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^22.4.0",
+    "electron-rebuild": "^1.10.0",
+    "electron": "^8.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "rebuild": "electron-rebuild -f -w serialport",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -m",
+    "postinstall": "node_modules/.bin/electron-builder install-app-deps"
+  },
+  "author": "christopher bright",
+  "license": "MIT"
+}

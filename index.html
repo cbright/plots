@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Plots</title>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="serial.js"></script>
+        <style>
+            fieldset div {
+                margin: .5em;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>
+                Configuration
+            </legend>
+            <div>
+            <label for="port">Serial port:</label>
+            <input type="text" name="port" id="port" value="COM3" />
+            </div>
+            <div>
+                <label for="">Save to:</label>
+                <input id="dataLocation" type="file" webkitdirectory />
+            </div>
+            <div>
+                <button id="connect" value="connect" value="Connect" onclick="openPort()">Connect</button>
+            </div>
+        </fieldset>
+        <div id="temp" style="margin-top: 1em;"></div>
+        <div id="daily" style="margin-top: 1em;"></div>
+        We are using node <script>document.write(process.versions.node)</script>,
+        Chrome <script>document.write(process.versions.chrome)</script>,
+        and Electron <script>document.write(process.versions.electron)</script>.
+    </body>
+</html>
