@@ -3,9 +3,24 @@ const Readline = require('@serialport/parser-readline');
 const fs = require('fs');
 const moment = require('moment');
 
-//document.addEventListener('DOMContentLoaded',pageLoaded);
+document.addEventListener('DOMContentLoaded',pageLoaded);
 
 var port;
+
+function pageLoaded() {
+    SerialPort.list().then(
+        ports => {
+            portSelect = document.getElementById('port');
+            ports.forEach((info,index,all) => {
+                var option = document.createElement("option");
+                option.text = info.path;
+                option.value = info.path;
+                portSelect.add(option);
+            });
+        },
+        err => console.error(err)
+      )
+}
 
  function openPort(){
 
